@@ -5,7 +5,7 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 export const fetchData = () => async (dispatch) => {
     dispatch({ type: FETCH_DATA_REQUEST });
     try {
-      const response = await fetch('https://rails-hello-back-end.onrender.com/');
+      const response = await fetch('http://localhost:3000/api/greetings');
       const data = await response.json();
       dispatch({ type: FETCH_DATA_SUCCESS, payload: data });
     } catch (error) {
